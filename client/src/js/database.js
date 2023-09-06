@@ -21,7 +21,7 @@ export const putDb = async (content) => {
   // Open the desired object store
   const store = tx.objectStore('jate');
   // Add the content to the object store
-  const request = store.add({ content });
+  const request = store.put({ id: 1, value: content });
   // Get confirmation that the content was added
   const result = await request;
   console.log('text added to database', result);
@@ -37,11 +37,11 @@ export const getDb = async () => {
   // Open the desired object store
   const store = tx.objectStore('jate');
   // Get all the content from the database
-  const request = store.getAll();
+  const request = store.get(1);
   // Get confirmation that the content was retrieved
   const result = await request;
-  console.log('text retrieved from database', result);
-  return result;
+  console.log('text retrieved from database', result.value);
+  return result?.value;
 };
   ;
 
