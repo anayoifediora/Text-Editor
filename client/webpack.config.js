@@ -33,15 +33,15 @@ module.exports = () => {
         description: 'A simple text editor',
         background_color: '#ffffff',
         crossorigin: 'use-credentials', //can be null, use-credentials or anonymous
+        start_url: '/',
+        publicPath: '/',
+        fingerprints: false,
+        inject: true,
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
             sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
             destination: path.join('assets', 'icons'),
-            start_url: '/',
-            publicPath: '/',
-            fingerprints: false,
-            inject: true,
           },
         ],
       }),
